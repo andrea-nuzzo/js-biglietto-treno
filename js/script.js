@@ -1,17 +1,24 @@
 // Chiedere all'utente il numero di chilometri da percorrere (Controllo dati in input)
-let kilometres = parseFloat(prompt('Inserisci i chilometri da percorrere'));
+const kilometres = parseFloat(prompt('Inserisci i chilometri da percorrere'));
 
 // Chiedere l'età del passeggero (Controllo dati in input)
-let age = parseInt(prompt("Inserisci l'età del passeggero."));
+const age = parseInt(prompt("Inserisci l'età del passeggero."));
 
 
 // Calcolare il costo del biglietto (0.21 a km)
-const price = 0.21 * kilometres;
-console.log(price);
-
+let price = 0.21 * kilometres;
 
 // Sconto 20% se minorenne
+if (age < 18){
+    discount = (price) * 20 / 100;
+    price -= discount
+    // Sconto 40% se over 65
+} else if (age > 65){
+    discount = (price) * 40 / 100;
+    price -= discount
+}
 
-// Sconto 40% se over 65
-
+price = parseFloat(price.toFixed(2));
 // Output con due decimali
+
+document.getElementById('price_ticket').innerHTML = price;
