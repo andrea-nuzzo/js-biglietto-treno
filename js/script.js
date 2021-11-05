@@ -1,9 +1,16 @@
 // Chiedere all'utente il numero di chilometri da percorrere (Controllo dati in input)
 const kilometres = parseFloat(prompt('Inserisci i chilometri da percorrere'));
 
+if (isNaN(kilometres)) {
+    alert("Il numero inserito non è un numero")
+}
+
 // Chiedere l'età del passeggero (Controllo dati in input)
 const age = parseInt(prompt("Inserisci l'età del passeggero."));
 
+if (isNaN(age)) {
+    alert("Il numero inserito non è un numero")
+}
 
 // Calcolare il costo del biglietto (0.21 a km)
 let price = 0.21 * kilometres;
